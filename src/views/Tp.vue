@@ -23,7 +23,7 @@
   
   // Propriétés calculées
   const agePlus = computed(() => user.value.age + 10);
-  const lucky = computed(() => (Math.random() * 100).toFixed(2));
+  const lucky = computed(() => (Math.random() * 100).toFixed(0));
   </script>
   
   <style scoped>
@@ -32,7 +32,6 @@
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
   .profile-image {
