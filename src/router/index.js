@@ -16,6 +16,18 @@ const router = createRouter({
             component: () => import("../views/Tp.vue")
         },
         {
+            path: "/tpDeux",
+            alias: "/tpDeux",
+            name: "TpDeux",
+            component: () => import("../views/TpDeux.vue")
+        },
+        {
+            path: "/exo",
+            alias: "/exo",
+            name: "Exo",
+            component: () => import("../views/Exo.vue")
+        },
+        {
             path: '/:pathMatch(.*)*',
             name: 'NotFound',
             component: () => import('../views/NotFoundView.vue')
