@@ -22,6 +22,12 @@ const router = createRouter({
             component: () => import("../views/TpDeux.vue")
         },
         {
+            path: "/tpTrois",
+            alias: "/tpTrois",
+            name: "TpTrois",
+            component: () => import("../views/TpTrois.vue")
+        },
+        {
             path: "/exo",
             alias: "/exo",
             name: "Exo",
