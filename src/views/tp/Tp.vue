@@ -32,6 +32,7 @@
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 20px;
+    
   }
   
   .profile-image {
