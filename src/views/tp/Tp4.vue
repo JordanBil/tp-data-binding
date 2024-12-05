@@ -1,5 +1,4 @@
-<template>
-    <div id="app">
+<template> 
       <div>
         <input
           v-model="inputText1"
@@ -15,7 +14,7 @@
   
       <button @click="toggleP">Afficher / Cacher le paragraphe</button>
   
-      <!-- Premier paragraphe avec style dynamique pour afficher/masquer -->
+
       <p
         :class="inputText1 === 'hello' ? 'maclasseHello' : inputText1 === 'world' ? 'maClasseWord' : ''"
         :style="{ display: PVisible ? 'block' : 'none' }"
@@ -23,11 +22,11 @@
         Premier paragraphe : {{ inputText1 }}
       </p>
   
-      <!-- Deuxième paragraphe avec changement dynamique de la couleur de fond -->
+   
       <p :style="{ backgroundColor: inputText2 }">
         Deuxième paragraphe : Couleur du fond change selon l'input
       </p>
-    </div>
+    
   </template>
   
   <script>
@@ -36,7 +35,7 @@
       return {
         inputText1: "",
         inputText2: "",
-        PVisible: true, // Pour afficher/masquer le premier paragraphe
+        PVisible: true,
       };
     },
     methods: {

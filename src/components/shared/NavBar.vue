@@ -3,7 +3,7 @@
     <router-link 
       class="nav-link" 
       aria-current="page" 
-      to="/home" 
+      to="/" 
       active-class="active"
     >
       Home
@@ -11,7 +11,7 @@
     <router-link 
       class="nav-link" 
       aria-current="page" 
-      to="/tp/tp" 
+      to="/tp1" 
       active-class="active"
     >
       TP
@@ -19,7 +19,7 @@
     <router-link 
       class="nav-link" 
       aria-current="page" 
-      to="/tp/tp2" 
+      to="/tp2" 
       active-class="active"
     >
       TP2
@@ -27,7 +27,7 @@
     <router-link 
       class="nav-link" 
       aria-current="page" 
-      to="/tp/tp3" 
+      to="/tp3" 
       active-class="active"
     >
       TP3
@@ -35,7 +35,7 @@
     <router-link 
       class="nav-link" 
       aria-current="page" 
-      to="/tp/tp4" 
+      to="/tp4" 
       active-class="active"
     >
       TP4
@@ -43,7 +43,7 @@
     <router-link 
       class="nav-link" 
       aria-current="page" 
-      to="/exo/exo" 
+      to="/exo" 
       active-class="active"
     >
       Exo
@@ -51,18 +51,10 @@
     <router-link 
       class="nav-link" 
       aria-current="page" 
-      to="/exo/exo2" 
+      to="/exo2" 
       active-class="active"
     >
       Exo2
-    </router-link>
-    <router-link 
-      class="nav-link" 
-      aria-current="page" 
-      to="/exo/exo3" 
-      active-class="active"
-    >
-      Exo3
     </router-link>
   </div>
 </template>

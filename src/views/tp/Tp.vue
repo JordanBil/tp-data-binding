@@ -14,7 +14,7 @@
   <script setup>
   import { ref, computed } from 'vue';
   
-  // Données réactives avec ref
+  // Données avec ref
   const user = ref({
     image: "https://imgs.search.brave.com/AZbUS7R4K1cBJuKseATkfQG2eecBsS1BU7oUVPAXzvM/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMjEy/ODkyOTY4Mi9wdC9m/b3RvL2FuYWhlaW0t/Y2FsaWZvcm5pYS1h/LWNvc3BsYXllci1k/cmVzc2VkLWFzLXN1/cGVyLW1hcmlvLWJy/b3RoZXJzLXBvc2Vz/LXdpdGgtYW4tdW1i/cmVsbGEtaW4tdGhl/LmpwZz9zPTYxMng2/MTImdz0wJms9MjAm/Yz1JemhtZ3I5WjVJ/bjI1MmVvM0FZQU9x/X1BsVERuY1Q0TmlB/MnE1V3pXNERvPQ", 
     name: "Dr.Mario",
