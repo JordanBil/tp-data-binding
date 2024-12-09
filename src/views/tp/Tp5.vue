@@ -40,8 +40,9 @@ const toggleList = () => {
       showList.value = !showList.value;
     };
 
+// Fonction pour supprimer un élémént de la liste si on clique dessus
 const removeItem = (index) => {
-  items.value.splice(index, 1);  // Supprime l'élément à l'index donné
+  items.value.splice(index, 1);  
 };
 </script>
   

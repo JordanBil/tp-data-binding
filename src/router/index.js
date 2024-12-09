@@ -45,6 +45,11 @@ const router = createRouter({
             component: () => import("../views/exo/Exo2.vue")
         },
         {
+            path: "/exoProbs",
+            name: "ExoProbs",
+            component: () => import("../views/exo/ExoProbs.vue")
+        },
+        {
             path: "/lesson-vfor",
             name: "lesson-vfor",
             component: () => import("../views/lesson/LessonListRendering.vue")
