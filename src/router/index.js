@@ -30,6 +30,11 @@ const router = createRouter({
             component: () => import("../views/tp/Tp4.vue")
         },
         {
+            path: "/tp5",
+            name: "Tp5",
+            component: () => import("../views/tp/Tp5.vue")
+        },
+        {
             path: "/exo",
             name: "Exo",
             component: () => import("../views/exo/Exo.vue")
@@ -38,6 +43,56 @@ const router = createRouter({
             path: "/exo2",
             name: "Exo2",
             component: () => import("../views/exo/Exo2.vue")
+        },
+        {
+            path: "/lesson-vfor",
+            name: "lesson-vfor",
+            component: () => import("../views/lesson/LessonListRendering.vue")
+        },
+        {
+            path: "/lesson-watchers",
+            name: "lesson-watchers",
+            component: () => import("../views/lesson/LessonWatchers.vue")
+        },
+        {
+            path: "/lesson-text-interpolation",
+            name: "lesson-text-interpolation",
+            component: () => import("../views/lesson/LessonTextInterpolation.vue")
+        },
+        {
+            path: "/lesson-methods",
+            name: "lesson-methods",
+            component: () => import("../views/lesson/LessonMethods.vue")
+        },
+        {
+            path: "/lesson-vhtml",
+            name: "lesson-vhtml",
+            component: () => import("../views/lesson/LessonInlineTemplatingView.vue")
+        },
+        {
+            path: "/lesson-vbind",
+            name: "lesson-vbind",
+            component: () => import("../views/lesson/LessonAttributeBindingView.vue")
+        },
+        {
+            path: "/lesson-von",
+            name: "lesson-von",
+            component: () => import("../views/lesson/LessonEventBindingView.vue")
+        },
+        {
+            path: "/lesson-vmodel",
+            name: "lesson-vmodel",
+            component: () => import("../views/lesson/LessonTwoWayBinding.vue")
+        },
+        {
+            path: "/lesson-dynamic-style",
+            name: "lesson-dynamic-style",
+            component: () => import("../views/lesson/LessonDynamicStyling.vue")
+        },
+        {
+            path: "/lesson-computed",
+            name: "lesson-computed",
+            component: () => import("../views/lesson/LessonComputedProperties.vue")
         },
         {
             path: '/:pathMatch(.*)*',
