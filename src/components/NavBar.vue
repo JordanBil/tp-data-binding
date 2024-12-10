@@ -26,6 +26,7 @@
         <router-link class="nav-link" to="/exo" active-class="active">Exo 1</router-link>
         <router-link class="nav-link" to="/exo2" active-class="active">Exo 2</router-link>
         <router-link class="nav-link" to="/exoProbs" active-class="active">Exo Probs</router-link>
+        <router-link class="nav-link" to="/exoFetch" active-class="active">Exo Fetch</router-link>
         <router-link class="nav-link" to="/exoProbsDetails" active-class="active">Exo Probs probleme</router-link>
       </div>
     </div>

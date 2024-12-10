@@ -55,6 +55,11 @@ const router = createRouter({
             component: () => import("../views/exo/ExoProbs.vue")
         },
         {
+            path: "/exoFetch",
+            name: "ExoFetch",
+            component: () => import("../views/exo/ExoFetche.vue")
+        },
+        {
             path: "/exoProbsDetails",
             name: "ExoProbsDetails",
             component: () => import("../views/exo/ExoProbsDetails.vue")
