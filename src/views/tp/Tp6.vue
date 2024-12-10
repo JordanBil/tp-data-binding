@@ -2,7 +2,7 @@
     <div class="game-container">
       <h1>Jeu Tour par Tour</h1>
   
-      <!-- Barres de vie -->
+      <!-- Barres de vie et image personnages -->
       <div class="bars">
         <div>
           <h2>SanGoku ssj18</h2>
@@ -35,7 +35,8 @@
       <!-- Message de fin de jeu -->
       <div v-if="winner" class="game-over">
         <h2>{{ winnerMessage }}</h2>
-      </div>
+        <button @click="resetGame" class="reset">Recommencer le combat</button>
+      </div>      
     </div>
   </template>
   
@@ -89,15 +90,22 @@
       winner.value = 'joueur';
     }
   };
+
+  const resetGame = () => {
+  playerHealth.value = 100;
+  adversaryHealth.value = 100;
+  currentRound.value = 0;
+  winner.value = null;
+  };
   
   const getRandomValue = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   };
   
   const winnerMessage = computed(() => {
-    if (winner.value === 'joueur') return 'VICTOIRE !';
-    if (winner.value === 'adversaire') return 'PERDU !';
-    return 'ÉGALITÉ';
+    if (winner.value === 'joueur') return 'Tu es le GOAT !';
+    if (winner.value === 'adversaire') return 'LOOSER !';
+    return 'MATCH NUL ! SHIFUMI?';
   });
   
   const gameOver = computed(() => winner.value !== null);
@@ -151,5 +159,20 @@
     font-size: 24px;
     color: red;
   }
+
+  .reset {
+  margin-top: 20px;
+  padding: 15px 30px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.reset:hover {
+  background-color: #d32f2f;
+}
   </style>
   
