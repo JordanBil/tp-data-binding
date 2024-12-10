@@ -67,6 +67,7 @@
   
   ul {
     list-style-type: none;
+   
   }
   
   li {

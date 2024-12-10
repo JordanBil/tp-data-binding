@@ -10,6 +10,18 @@ const router = createRouter({
             component: () => import("../views/HomeView.vue")
         },
         {
+            path: "/details/:id",
+            name: "Details",
+            component: () => import("../components/DetailsPage.vue"),
+            props:true
+        },
+        {
+            path: "/exoRouter",
+            name: "ExoRouter",
+            component: () => import("../components/LessonRouterView.vue"),
+            props:true
+        },
+        {
             path: "/tp1",
             name: "Tp1",
             component: () => import("../views/tp/Tp.vue")
@@ -55,14 +67,19 @@ const router = createRouter({
             component: () => import("../views/exo/ExoProbs.vue")
         },
         {
-            path: "/exoFetch",
-            name: "ExoFetch",
+            path: "/exoRouteur",
+            name: "ExoRouteur",
+            component: () => import("../components/LessonRouterView.vue")
+        },
+        {
+            path: "/exoFetche",
+            name: "ExoFetche",
             component: () => import("../views/exo/ExoFetche.vue")
         },
         {
-            path: "/exoProbsDetails",
-            name: "ExoProbsDetails",
-            component: () => import("../views/exo/ExoProbsDetails.vue")
+            path: "/exoEmit",
+            name: "ExoEmit",
+            component: () => import("../views/exo/ExoEmit.vue")
         },
         {
             path: "/lesson-vfor",
