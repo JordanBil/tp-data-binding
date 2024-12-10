@@ -26,6 +26,7 @@
         <router-link class="nav-link" to="/exo" active-class="active">Exo 1</router-link>
         <router-link class="nav-link" to="/exo2" active-class="active">Exo 2</router-link>
         <router-link class="nav-link" to="/exoProbs" active-class="active">Exo Probs</router-link>
+        <router-link class="nav-link" to="/exoProbsDetails" active-class="active">Exo Probs probleme</router-link>
       </div>
     </div>
 
@@ -37,6 +38,7 @@
         <router-link class="nav-link" to="/tp3" active-class="active">TP3</router-link>
         <router-link class="nav-link" to="/tp4" active-class="active">TP4</router-link>
         <router-link class="nav-link" to="/tp5" active-class="active">TP5</router-link>
+        <router-link class="nav-link" to="/tp6" active-class="active">TP6</router-link>
       </div>
     </div>
   </div>

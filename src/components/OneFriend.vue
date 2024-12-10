@@ -1,6 +1,6 @@
 <template>
     <div class="friend">
-      <h2>{{ unAmiName }}</h2>
+        <h2>{{ premium === 'abc' ? 'ami premium' : 'ami nul' }}</h2>
   
       <!-- Bouton pour afficher/masquer les détails -->
       <button @click="toggleDetails">
@@ -18,7 +18,7 @@
   <script setup>
   import { ref } from 'vue';
   
-  const props = defineProps(['unAmiName', 'unAmiPhone', 'unAmiMail']);
+  const props = defineProps(['unAmiName', 'unAmiPhone', 'unAmiMail', 'premium']);
 
   const showDetails = ref(false);
   
@@ -26,6 +26,14 @@
   const toggleDetails = () => {
     showDetails.value = !showDetails.value;
   };
+
+  const afficherPremiumTest = () => {
+    if(props.premium === 'abc'){
+        props.premium = 'xyz'
+    } else {
+        props.premium = 'abc'
+    }
+  }
   </script>
   
   <style scoped>

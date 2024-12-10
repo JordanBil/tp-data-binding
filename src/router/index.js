@@ -35,6 +35,11 @@ const router = createRouter({
             component: () => import("../views/tp/Tp5.vue")
         },
         {
+            path: "/tp6",
+            name: "Tp6",
+            component: () => import("../views/tp/Tp6.vue")
+        },
+        {
             path: "/exo",
             name: "Exo",
             component: () => import("../views/exo/Exo.vue")
@@ -48,6 +53,11 @@ const router = createRouter({
             path: "/exoProbs",
             name: "ExoProbs",
             component: () => import("../views/exo/ExoProbs.vue")
+        },
+        {
+            path: "/exoProbsDetails",
+            name: "ExoProbsDetails",
+            component: () => import("../views/exo/ExoProbsDetails.vue")
         },
         {
             path: "/lesson-vfor",
