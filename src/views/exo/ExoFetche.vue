@@ -24,7 +24,7 @@
   import { ref, onMounted, onBeforeUnmount } from 'vue';
   
   const pokemons = ref([]);
-  const meteo = ref(null);
+  const meteo = ref();
   
   // Fonction pour récupérer les données des Pokémon
   const fetchPokemon = async () => {
@@ -59,15 +59,7 @@
   </script>
   
   <style scoped>
-  .container {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-  }
-  
-  h1 {
-    color: #333;
-  }
-  
+
   h2 {
     margin-top: 20px;
     color: #555;
@@ -75,15 +67,10 @@
   
   ul {
     list-style-type: none;
-    padding: 0;
   }
   
   li {
     padding: 5px 0;
-  }
-  
-  p {
-    color: #666;
   }
   </style>
   
