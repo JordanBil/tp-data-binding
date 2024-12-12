@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import {auth} from "../firebase";
 
 
 const router = createRouter({
@@ -82,6 +83,27 @@ const router = createRouter({
             component: () => import("../views/exo/ExoEmit.vue")
         },
         {
+            path: "/exoEmit2",
+            name: "ExoEmit2",
+            component: () => import("../views/exo/ExoEmit2.vue")
+        },
+        {
+            path: "/register",
+            name: "Register",
+            component: () => import("../views/exo/RegisterPageView.vue")
+        },
+        {
+            path: "/login",
+            name: "Login",
+            component: () => import("../views/exo/LoginPageView.vue")
+        },
+        {
+            path: "/dashboard",
+            name: "Dashboard",
+            component: () => import("../views/exo/DashboardView.vue"),
+            meta: { requiresAuth: true }, // Route protégée
+        },
+        {
             path: "/lesson-vfor",
             name: "lesson-vfor",
             component: () => import("../views/lesson/LessonListRendering.vue")
@@ -137,6 +159,21 @@ const router = createRouter({
             component: () => import('../views/NotFoundView.vue')
         },
     ]
+});
+
+// Vérification avant chaque navigation
+router.beforeEach((to, from, next) => {
+    const currentUser = auth.currentUser;
+
+    if (to.matched.some((record) => record.meta.requiresAuth)) {
+        if (!currentUser) {
+            next({ name: "Login" }); // Redirection vers la page de connexion si non authentifié
+        } else {
+            next();
+        }
+    } else {
+        next();
+    }
 });
 
 export default router;

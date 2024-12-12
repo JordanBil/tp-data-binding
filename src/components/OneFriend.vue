@@ -1,65 +1,44 @@
 <template>
-    <div class="friend">
-        <h2>{{ premium === 'abc' ? 'ami premium' : 'ami nul' }}</h2>
-  
-      <!-- Bouton pour afficher/masquer les détails -->
-      <button @click="toggleDetails">
-        {{ showDetails ? 'Cacher les détails' : 'Afficher les détails' }}
-      </button>
-  
-      <!-- Affichage conditionnel des détails -->
-      <div v-if="showDetails">
-        <p>Téléphone: {{ unAmiPhone }}</p>
-        <p>Email: {{ unAmiMail }}</p>
-      </div>
-    </div>
-  </template>
-  
-  <script setup>
-  import { ref } from 'vue';
-  
-  const props = defineProps(['unAmiName', 'unAmiPhone', 'unAmiMail', 'premium']);
+  <div>
+    <h1>Liste des Amis</h1>
+    <EmitOneFriendIdComp
+      v-for="unAmi in lesAmis"
+      :key="unAmi.id"
+      :id="unAmi.id"
+      :unAmiName="unAmi.name"
+      :unAmiPhone="unAmi.phone"
+      :unAmiMail="unAmi.email"
+      :premium="unAmi.premium"
+      @mon-event-premium="reactionStatus"
+    />
+  </div>
+</template>
 
-  const showDetails = ref(false);
-  
-  // Méthode pour afficher/masquer les détails
-  const toggleDetails = () => {
-    showDetails.value = !showDetails.value;
-  };
+<script setup>
+import { reactive } from 'vue';
+import EmitOneFriendIdComp from '../../components/EmitOneFriendIdComp.vue';
 
-  const afficherPremiumTest = () => {
-    if(props.premium === 'abc'){
-        props.premium = 'xyz'
-    } else {
-        props.premium = 'abc'
-    }
+const lesAmis = reactive([
+  { id: 1, name: 'Alice', phone: '123-456-789', email: 'alice@example.com', premium: false },
+  { id: 2, name: 'Bob', phone: '987-654-321', email: 'bob@example.com', premium: true },
+  { id: 3, name: 'Charlie', phone: '456-789-123', email: 'charlie@example.com', premium: false },
+]);
+
+function reactionStatus(id) {
+  const ami = lesAmis.find((a) => a.id === id);
+  if (ami) {
+    ami.premium = !ami.premium;
+    console.log(`Statut premium de ${ami.name} mis à jour : ${ami.premium ? 'Oui' : 'Non'}`);
+    alert(`Le statut premium de ${ami.name} est maintenant : ${ami.premium ? 'Oui' : 'Non'}`);
+  } else {
+    console.error(`Erreur : Aucun ami trouvé avec l'ID ${id}`);
   }
-  </script>
-  
-  <style scoped>
-  .friend {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-  }
-  
-  button {
-    margin-top: 10px;
-    padding: 5px 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
-  div {
-    margin-top: 10px;
-  }
-  </style>
-  
+}
+</script>
+
+<style scoped>
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+</style>

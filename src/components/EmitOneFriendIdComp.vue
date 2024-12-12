@@ -1,17 +1,26 @@
 <template>
   <div class="friend-card">
-    <h3>{{ unAmiName }}</h3>
-    <p>Email : {{ unAmiMail }}</p>
-    <p>Téléphone : {{ unAmiPhone }}</p>
-    <p>Statut premium : {{ premium ? 'Oui' : 'Non' }}</p>
-    <button @click="togglePremiumStatus">Premium</button>
+    <p><strong>Nom :</strong> {{ unAmiName }}</p>
+    <p><strong>Premium :</strong> {{ premium ? 'Oui' : 'Non' }}</p>
+    
+    <!-- Bouton pour afficher/cacher les détails -->
+    <button @click="toggleDetails">
+      {{ showDetails ? 'Masquer Détails' : 'Afficher Détails' }}
+    </button>
+
+    <!-- Détails affichés si showDetails est true -->
+    <div v-if="showDetails" class="details">
+      <p><strong>Téléphone :</strong> {{ unAmiPhone }}</p>
+      <p><strong>Email :</strong> {{ unAmiMail }}</p>
+    </div>
+
+    <button @click="togglePremium">Changer Statut Premium</button>
+    <button class="delete-button" @click="deleteFriend">Supprimer</button>
   </div>
 </template>
 
 <script setup>
-import { defineEmits, defineProps } from 'vue';
-
-const emit = defineEmits(['mon-event-premium']);
+import { defineProps, defineEmits, ref } from 'vue';
 
 const props = defineProps({
   id: Number,
@@ -21,8 +30,22 @@ const props = defineProps({
   premium: Boolean,
 });
 
-function togglePremiumStatus() {
+const emit = defineEmits(['mon-event-premium', 'delete-friend']);
+
+// État local pour contrôler l'affichage des détails
+const showDetails = ref(false);
+
+function togglePremium() {
   emit('mon-event-premium', props.id);
+}
+
+function deleteFriend() {
+  emit('delete-friend', props.id);
+}
+
+// Fonction pour basculer l'affichage des détails
+function toggleDetails() {
+  showDetails.value = !showDetails.value;
 }
 </script>
 
@@ -30,16 +53,40 @@ function togglePremiumStatus() {
 .friend-card {
   border: 1px solid #ccc;
   padding: 1rem;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
 }
+
 button {
-  padding: 0.5rem 1rem;
-  background-color: #007bff;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background-color: #4caf50;
   color: white;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
 }
+
 button:hover {
-  background-color: #0056b3;
+  background-color: #45a049;
+}
+
+.delete-button {
+  background-color: #e74c3c;
+}
+
+.delete-button:hover {
+  background-color: #c0392b;
+}
+
+.details {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: #eef;
+  border: 1px solid #ccd;
+  border-radius: 4px;
 }
 </style>
