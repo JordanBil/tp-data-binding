@@ -45,6 +45,7 @@
         <router-link class="nav-link" to="/tp4" active-class="active">TP4</router-link>
         <router-link class="nav-link" to="/tp5" active-class="active">TP5</router-link>
         <router-link class="nav-link" to="/tp6" active-class="active">TP6</router-link>
+        <router-link class="nav-link" to="/tp7" active-class="active">TP7</router-link>
       </div>
     </div>
   </div>

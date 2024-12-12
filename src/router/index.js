@@ -53,6 +53,16 @@ const router = createRouter({
             component: () => import("../views/tp/Tp6.vue")
         },
         {
+            path: "/tp6",
+            name: "Tp6",
+            component: () => import("../views/tp/Tp6.vue")
+        },
+        {
+            path: "/tp7",
+            name: "Tp7",
+            component: () => import("../views/tp/Tp7.vue")
+        },
+        {
             path: "/exo",
             name: "Exo",
             component: () => import("../views/exo/Exo.vue")
