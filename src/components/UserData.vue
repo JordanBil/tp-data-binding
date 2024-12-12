@@ -4,11 +4,11 @@
     <form @submit.prevent="updateUser">
       <label>
         Nom :
-        <input v-model="editedName" type="text" required />
+        <input v-model="userName" type="text" required />
       </label>
       <label>
         Âge :
-        <input v-model.number="editedAge" type="number" min="0" required />
+        <input v-model.number="userAge" type="number" min="0" required />
       </label>
       <button type="submit">MAJ</button>
     </form>
@@ -19,18 +19,18 @@
 import { defineEmits } from 'vue';
 import { ref } from 'vue';
 
-const emit = defineEmits(['update-user']); // Déclaration de emit
+const emit = defineEmits(['update-user']); 
 
-const editedName = ref('');
-const editedAge = ref('');
+const userName = ref('');
+const userAge = ref('');
 
 const updateUser = () => {
-  if (editedName.value && editedAge.value >= 0) {
+  if (userName.value && userAge.value >= 0) {
     const updatedUser = {
-      name: editedName.value,
-      age: editedAge.value,
+      name: userName.value,
+      age: userAge.value,
     };
-    emit('update-user', updatedUser); // Utilisation correcte de emit
+    emit('update-user', updatedUser); 
   }
 };
 </script>
